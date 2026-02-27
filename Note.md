@@ -1,108 +1,165 @@
-JavaScript Core – Interview Revision README
+📘 JavaScript Complete Progress Notes (Updated)
 1️⃣ Variables (var, let, const)
-✅ Definition
-A variable is a container used to store data values.
+* var
+* Function scoped
+* Can re-declare
+* Can update
+* Hoisted (initialized as undefined)
 
-🔹 var
-Function scoped
-Can be re-declared
-Can be updated
-Hoisted (initialized as undefined)
-
-* Code
-var name = "Vishal";
-var name = "Rahul"; // allowed
-name = "Amit"; // allowed
-
-🔹 let
+let
 Block scoped
 Cannot re-declare
 Can update
 Hoisted but in TDZ
 
-🔹 const
+const
 Block scoped
 Cannot re-declare
 Cannot update
 Must initialize at declaration
 
-🔥 Interview Difference
-| Feature    | var      | let       | const     |
-| ---------- | -------- | --------- | --------- |
-| Scope      | Function | Block     | Block     |
-| Re-declare | ✅        | ❌         | ❌         |
-| Update     | ✅        | ✅         | ❌         |
-| Hoisting   | Yes      | Yes (TDZ) | Yes (TDZ) |
 
 2️⃣ Data Types
-
-🔹 Primitive (Immutable)
-
+Primitive (Immutable)
 String
-
 Number
-
 Boolean
-
-Undefined
-
 Null
-
+Undefined
 Symbol
-
 BigInt
 
-Non-Primitive (Reference Type)
-
-🔥 null vs undefined
-| undefined                          | null                    |
-| ---------------------------------- | ----------------------- |
-| Variable declared but not assigned | Intentional empty value |
+Non-Primitive (Reference)
+Object
+Array
+Function
+null vs undefined
+undefined → declared but not assigned
+null → intentional empty value
 
 3️⃣ Functions
-A function is a reusable block of code.
+Types
+Function Declaration
+Function Expression
+Arrow Function
+Key Differences
+Arrow function has no own this
+Arrow cannot be constructor
 
-🔹 Normal Function
-
-function greet(name) {
-  return "Hello " + name;
-}
-
-🔹 Arrow Function
-const greet = (name) => {
-  return "Hello " + name;
-};
-
-🔥 Difference
-| Normal             | Arrow                 |
-| ------------------ | --------------------- |
-| Has its own this   | No own this           |
-| Can be constructor | Cannot be constructor |
-
-4️⃣ Arrays
-let numbers = [1, 2, 3, 4];
-🔹 map()
-
-numbers.map(n => n * 2);
-
-🔹 filter()
-numbers.filter(n => n % 2 === 0);
-
-reduce()
-numbers.reduce((acc, curr) => acc + curr, 0);
-
-🔥 map vs forEach
-| map               | forEach           |
-| ----------------- | ----------------- |
-| Returns new array | Returns undefined |
+4️⃣ Arrays (Important Methods)
+map() → returns new array
+filter() → filtered array
+reduce() → single value
+find()
+forEach()
+some()
+every()
 
 5️⃣ Objects
+Dot notation
+Bracket notation
+Destructuring
+Spread operator
 
-let user = {
-  name: "Vishal",
-  age: 22
-};
+6️⃣ Scope
+Types:
+Global Scope
+Function Scope
+Block Scope
 
-Access:
-user.name
-user["age"]
+7️⃣ Hoisting
+JavaScript moves declarations to the top before execution.
+var → undefined
+let/const → TDZ
+
+8️⃣ TDZ (Temporal Dead Zone)
+The time between entering scope and variable declaration.
+
+9️⃣ Closures
+A closure remembers variables from its outer scope even after execution.
+Used for:
+Data privacy
+Counters
+
+Encapsulation
+🔟 Callback
+A function passed as argument to another function.
+Problem:
+Callback Hell (nested callbacks)
+
+1️⃣1️⃣ Promise
+States:
+Pending
+Fulfilled
+Rejected
+Methods:
+then()
+catch()
+finally()
+
+1️⃣2️⃣ Async / Await
+Cleaner syntax for handling promises.
+Uses:
+async keyword
+await keyword
+try/catch for error handling
+
+✅ PHASE 2 – Advanced JavaScript (Runtime & Internals)
+
+1️⃣ Execution Context
+JS creates execution context when running code.
+
+Two Phases:
+Creation Phase
+Memory allocation
+Variables → undefined
+Functions → stored completely
+
+* Execution Phase
+Assign values
+Execute line by line
+
+Types:
+* Global Execution Context
+* Function Execution Context
+
+2️⃣ Call Stack
+Data structure (LIFO)
+Tracks function calls
+One stack → JS is single-threaded
+
+3️⃣ Event Loop
+JS Runtime includes:
+Call Stack
+Web APIs
+Callback Queue
+Microtask Queue
+Event Loop
+Important Rule:
+Microtasks (Promise) run before Callback Queue (setTimeout).
+
+4️⃣ this Keyword
+Global
+Browser → window
+Node → global
+
+Inside Object
+Refers to object
+
+Arrow Function
+Does NOT have its own this
+Inherits from parent
+
+5️⃣ call(), apply(), bind()
+call()
+Executes immediately
+Arguments separated
+
+apply()
+Executes immediately
+Arguments in array
+
+bind()
+Returns new function
+Does not execute immediately
+

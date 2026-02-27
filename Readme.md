@@ -92,3 +92,51 @@ An object representing future completion of async operation.
 ✔ Difference between Promise and Async/Await?
 
 Async/Await is syntactic sugar over Promises.
+
+✅ Phase 1: JavaScript Core (Completed)
+You finished:
+🔹Fundamentals
+* Variables (var, let, const)
+* Data Types
+* Functions (normal + arrow)
+* Arrays (map, filter, reduce)
+* Objects
+
+🔹Important Concepts
+*Scope (global, function, block)
+* Hoisting
+* TDZ
+* Closures
+* Callback
+* Promise
+* Async/Await
+
+✅ Phase 2: Advanced JavaScript (Currently Ongoing)
+
+We have started and covered:
+🔹 Execution Context
+Creation phase
+Execution phase
+Global Execution Context
+Function Execution Context
+
+🔹 Call Stack
+LIFO
+How functions push & pop
+🔹 Event Loop
+
+Call Stack
+Web APIs
+Callback Queue
+Microtask Queue
+Why Promise runs before setTimeout
+
+🔹 this Keyword
+Global
+Inside object
+Arrow function behavior
+
+🔹 Shallow vs Deep Copy
+Spread operator
+Nested object issue
+JSON deep copy method
